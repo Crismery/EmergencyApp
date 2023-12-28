@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar las emergencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" [(ngModel)]="log.fecha"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Título</ion-label>
+      <ion-input type="text" [(ngModel)]="log.titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="log.descripcion"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Foto</ion-label>
+      <input type="file" (change)="onFileChange($event)" accept="image/*">
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveLog()">Guardar</ion-button>
+</ion-content>

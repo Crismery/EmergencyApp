@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista de las emergencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let log of logs" (click)="viewLogDetails(log)">
+      <ion-label>
+        <h2> Titulo: {{ log.titulo }}</h2>
+        <h3><p>Fecha: {{ log.fecha }}</p></h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
